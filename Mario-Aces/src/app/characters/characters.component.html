@@ -1,7 +1,9 @@
 <h2>Mario Tennis Aces Characters</h2>
 <ul class="characters">
-  <li *ngFor="let character of characters" [class.selected]="character === selectedCharacter" (click)="onSelect(character)">
-    <span class="badge">{{ character.name }}</span> {{ character.class }}
+  <li *ngFor="let character of characters">
+    <a routerLink="/detail/{{ character.name }}">
+      <span class="badge">{{ character.name }}</span> {{ character.class }}
+    </a>
   </li>
 </ul>
-<app-character-detail [character]="selectedCharacter"></app-character-detail>
+<!--<app-character-detail [character]="selectedCharacter"></app-character-detail>-->
